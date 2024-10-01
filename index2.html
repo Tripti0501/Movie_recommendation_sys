@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Genre and Rating | Cineverse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 420px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-10px);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #34495e;
+            display: inline-block;
+        }
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .radio-item {
+            flex: 1 0 48%;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"] + label {
+            display: block;
+            background-color: #ecf0f1;
+            padding: 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: #2c3e50;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="radio"] + label:hover {
+            background-color: #d1e8f0;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #bdc3c7;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+        }
+        input[type="submit"] {
+            background-color: #2ecc71;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        input[type="submit"]:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Genre and Rating</h1>
+        <form method='POST'>
+            <div class="form-group">
+                <label>Genre</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="horror" name="genre" value="Horror" required>
+                        <label for="horror">Horror</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="action" name="genre" value="Action">
+                        <label for="action">Action</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="comedy" name="genre" value="Comedy">
+                        <label for="comedy">Comedy</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="romantic" name="genre" value="Romantic">
+                        <label for="romantic">Romantic</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="scifi" name="genre" value="Sci-Fi">
+                        <label for="scifi">Sci-Fi</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="adult" name="genre" value="Adult">
+                        <label for="adult">Adult</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="thriller" name="genre" value="Thriller">
+                        <label for="thriller">Thriller</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="drama" name="genre" value="Drama">
+                        <label for="drama">Drama</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="documentary" name="genre" value="Documentary">
+                        <label for="documentary">Documentary</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="others" name="genre" value="Others">
+                        <label for="others">Others</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="imdb">IMDB Rating</label>
+                <input type="number" id="imdb" name="imdb" min="0" max="10" step="0.1" required>
+            </div>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>
